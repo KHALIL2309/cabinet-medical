@@ -1,0 +1,32 @@
+
+
+{% extends 'cabinetMedical/projeet.html' %} 
+
+{% block content %}
+
+      <h1 class="pt-4 ">book</h1>
+      <div class="container">
+      <table class="table">
+            <thead>
+              <tr>
+                
+                <th scope="col">name</th>
+                <th scope="col">statu</th>
+                <th scope="col">ville</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for item in Book %}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.statu}}</td>
+                <td>{{item.ville}}</td>
+            </tr>
+                {% endfor  %}
+            </tbody>
+          </table>
+      </div>
+
+{% endblock  %}
+
+

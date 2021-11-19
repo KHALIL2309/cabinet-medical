@@ -1,0 +1,98 @@
+
+
+{% extends 'cabinetMedical/projeet.html' %} 
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        total de client ={{t_orders}}
+      </div>
+      <div class="col">
+          age 20 ={{t_age}}
+      </div>
+      <div class="col">
+        total ={{a_orders}}
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+          <div class="card" >
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> <a class="btn btn-success" href="#">create</a> </h6> 
+                  <div class="container"> 
+                      <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Statu</th>
+                                <th scope="col">Tele</th>
+                                <th scope="col">Age</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in vclients %}
+                            <tr>
+                                <td>{{item.name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.tele}}</td>
+                                <td>{{item.age}}</td>
+                                <td>
+                                  <a href="#"><i class="fas fa-edit"></i></i></a>
+                                  <a href="#"><i style="color: #ff0000;" class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                                {% endfor  %}
+                            </tbody>
+                          </table>
+                      </div>
+                </div>
+              </div>
+      </div>
+      <div class="col">
+          <div class="card" >
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><a class="btn btn-success" href="#">create</a></h6>
+                  <div class="container"> 
+                      <table class="table">
+                            <thead>
+                              <tr>
+                                
+                                <th scope="col">Client</th>
+                                <th scope="col">Book</th>
+                                <th scope="col">Statu</th>
+                                <th scope="col">Date</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in order %}
+                            <tr>
+                                <td>{{item.client}}</td>
+                                <td>{{item.books}}</td>
+                                <td>{{item.status}}</td>
+                                <td>{{item.date_created}}</td>
+                                <td>
+                                  <a href="#"><i class="fas fa-edit"></i></i></a>
+                                  <a href="#"><i style="color: #ff0000;" class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                                {% endfor  %}
+                            </tbody>
+                          </table>
+                      </div>
+                </div>
+              </div>
+      </div>
+    </div>
+    
+  </div>
+
+{% endblock  %}
